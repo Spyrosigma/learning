@@ -1,0 +1,264 @@
+%-------------------------
+% Resume in Latex
+% Author: Satyam Namdev
+% License : MIT
+%------------------------
+
+%---- Required Packages and Functions ----
+
+\documentclass[a4paper,10pt]{article}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\setlength{\multicolsep}{0pt}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\usepackage[most]{tcolorbox}
+\tcbset{
+	frame code={}
+	center title,
+	left=0pt,
+	right=0pt,
+	top=0pt,
+	bottom=0pt,
+	colback=gray!20,
+	colframe=white,
+	width=\dimexpr\textwidth\relax,
+	enlarge left by=-2mm,
+	boxsep=4pt,
+	arc=0pt,outer arc=0pt,
+}
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}}
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\footnotesize{#4}} \\
+      \small{#3} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-1mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\footnotesize{#3}} \\
+      \small{#2} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-1mm}
+}
+
+\renewcommand\baselinestretch{1.1}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+%---- End of Packages and Functions ------
+
+\begin{document}
+\fontfamily{cmr}\selectfont
+
+%----------HEADING-----------------
+
+\begin{flushright}
+  \vspace{-4pt}
+  \color{black}
+  \item
+\end{flushright}
+
+\vspace{-50pt}
+
+\begin{center}
+    \textbf{\Huge \scshape Satyam Namdev}
+    \vspace{1mm}
+
+    % Phone:
+    % \href{tel:+918077929614}{\underline{+91 8077929614}} $ $ $ $
+    Website:
+    \href{https://spyrosigma.in}{\underline{spyrosigma.in}}
+    $ $
+    \faIcon{twitter}
+    \href{https://x.com/Spyrosigma}{\underline{x.com/Spyrosigma}}
+
+    \vspace{8pt}
+    \small
+    \faIcon{github}
+    \href{https://github.com/Spyrosigma}{\underline{github.com/Spyrosigma}} $  $
+    \faIcon{linkedin}
+    \href{https://www.linkedin.com/in/spyrosigma}{\underline{linkedin.com/in/spyrosigma}} $  $
+    \faIcon{envelope}
+    \href{mailto:namdev2003satyam@gmail.com}{\underline{namdev2003satyam@gmail.com}}
+\end{center}
+
+\vspace{1pt}
+\begin{center}
+  \small \textbf{Delhi, India \textperiodcentered{} IST (UTC+5:30) \textperiodcentered{} 4hr overlap with US-Eastern \textperiodcentered{} 1.5+ yrs fully remote \textperiodcentered{} Open to remote roles worldwide}
+\end{center}
+\vspace{-4pt}
+
+%-----------SUMMARY-----------
+\section{\textbf{Summary}}
+\vspace{1.5mm}
+\small{
+AI/Backend Engineer with \textbf{1.5+ years} of remote production experience at US startups (\textbf{ezAIx}, \textbf{TunableLabs}). Built and owned real-time AI voice infrastructure (\textbf{Azure OpenAI GPT-4o Realtime}, \textbf{Django ASGI}, \textbf{WebRTC}), production \textbf{RAG pipelines} with hybrid search, and \textbf{multi-agent systems} with \textbf{tool calling} --- cut TTS costs \textbf{85\%} and call setup latency \textbf{70\%} on a live enterprise contact center. \textbf{IIT Madras} BS Data Science.
+}
+\vspace{-3mm}
+
+%-----------EXPERIENCE-----------
+\section{\textbf{Work Experience}}
+  \resumeSubHeadingListStart
+
+\resumeSubheading
+{ Backend AI Engineer}{ Thousand Oaks, USA (Remote)}
+{ ezAIx, Inc }{May 2025 -- Present} \vspace{2mm}
+\resumeItemListStart
+
+  \item{Architected \textbf{VoiceCoreIQ}, an enterprise contact center platform --- \textbf{18 Django ASGI apps} on \textbf{Azure Communication Services} spanning call automation, agent management, queue orchestration, reporting, and omnichannel messaging.}
+
+  \item{Reduced TTS costs by \textbf{85\%} and call setup latency by \textbf{70\%} via a 3-tier caching strategy (\textbf{Redis} $\rightarrow$ \textbf{Azure Blob Storage} $\rightarrow$ on-demand generation), directly cutting infrastructure spend on a live production system.}
+
+  \item{Built production \textbf{AI Voicebot} bridging \textbf{Azure OpenAI GPT-4o Realtime} with ACS/\textbf{WebRTC} media streams over WebSocket --- real-time \textbf{tool calling} (order lookup, CSAT, \textbf{RAG document search}), configurable personality profiles, and per-session cost tracking in \textbf{MongoDB}.}
+
+  \item{Engineered \textbf{RAG pipeline}: document upload to \textbf{Azure Blob}, parsing via \textbf{Azure Document Intelligence}, 512-token hierarchical chunking, and \textbf{hybrid search (BM25 + vector)} with \textbf{llama-text-embed-v2} into per-voicebot \textbf{Pinecone} namespaces.}
+
+  \item{Built real-time infrastructure with \textbf{Django Channels} (5 WebSocket consumers) and custom \textbf{ASGI SSE middleware}; distributed task processing via \textbf{Celery/Beat} and \textbf{Redis TLS} powering a call dispatch state machine and 10+ async tasks.}
+
+  \item{Designed multi-tenant \textbf{MongoDB} architecture with aggregation pipelines powering analytics dashboards (SLA, sentiment, CSAT, agent productivity); integrated \textbf{Azure OpenAI GPT-4o-mini} for real-time sentiment analysis and post-call summarization.}
+
+  \item{Containerized with \textbf{Docker} multi-stage builds and \textbf{nginx} reverse proxy; \textbf{0$\rightarrow$1 production ownership} of the backend and participated in client calls as \textbf{Product Lead} to scope features, prioritize roadmap, and drive delivery.}
+
+  % \item{Drove all backend work \textbf{async across US/India timezones} --- daily written standups, Loom walkthroughs, PR-based code reviews, and async Teams communication as primary collaboration mode.}
+
+\resumeItemListEnd
+
+
+\resumeSubheading
+{ Founding AI Engineer }{San Francisco, USA (Remote)}
+{ TunableLabs, LLC}{Nov 2024 -- April 2025}\vspace{2mm}
+\resumeItemListStart
+  \item{Spearheaded development of an end-to-end async \textbf{Legal-AI system} using \textbf{FastAPI, Next.js, Supabase, Weaviate, AWS-S3}, serving 200+ legal professionals with \textbf{99.9\% uptime}.}
+  \item{Designed \textbf{Supabase (PostgreSQL)} schemas for multi-tenant chat sessions, document collections, and RAG workflows; optimized to handle 10,000+ session records with \textbf{sub-100ms} query response times.}
+  \item{Delivered \textbf{tool calling} / structured outputs, streaming inference, multi-LLM orchestration via \textbf{LiteLLM}, and real-time WebSocket updates for 100+ concurrent users; integrated live web search via \textbf{Tavily} and \textbf{Exa}.}
+  \item{Developed \textbf{LangGraph multi-agent system} for entity extraction with schema validation and agent orchestration; ran \textbf{agent evaluation} achieving \textbf{92\% accuracy} across 5,000+ legal documents.}
+  \item{Refactored a tightly coupled Gradio monolith into a modular \textbf{FastAPI} backend (\textbf{0$\rightarrow$1}), reducing deployment time by \textbf{60\%} and enabling scalable API integration for 3 major law firms.}
+\resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+\vspace{-5mm}
+
+%-----------SELECTED PROJECTS-----------
+\section{\textbf{Selected Projects}}
+  \resumeSubHeadingListStart
+
+     \resumeProject
+      { Zendex --- RAG Chat with Inference Logging SDK \href{https://zendex.spyrosigma.in}{ ( zendex.spyrosigma.in ) }}{ $\cdot$ Next.js $\cdot$ FastAPI $\cdot$ LiteLLM $\cdot$ Pinecone $\cdot$ Langfuse $\cdot$ OpenTelemetry $\cdot$ Docker}{}{}
+      \resumeItemListStart
+        \item{Multi-turn streaming \textbf{RAG chat} with \textbf{hybrid search} and multi-provider routing via \textbf{LiteLLM} (\textbf{Groq Llama 3.3 70B}, \textbf{Gemini 2.0 Flash}) plus source citations. Built a custom \textbf{inference logging SDK} with latency/token/\textbf{PII} capture; production observability via \textbf{Langfuse} traces and \textbf{OpenTelemetry}. Dockerized, deployed live.}
+      \resumeItemListEnd
+
+
+  \resumeSubHeadingListEnd
+\vspace{-5mm}
+
+%-----------TECHNICAL SKILLS-----------
+\section{\textbf{Technical Skills}}
+\vspace{1mm}
+\resumeItemListStart
+
+\item \textbf{Languages:} Python, Go, SQL, TypeScript/JavaScript
+
+\item \textbf{AI/ML:} LLMs, RAG, Hybrid Search (BM25 + Vector), AI Agents, Multi-Agent Systems, Tool Calling, Agent Evaluation, LangChain/LangGraph, PydanticAI, OpenAI Agents SDK, LiteLLM, Langfuse, OpenTelemetry, PyTorch, HuggingFace
+
+\item \textbf{Backend:} Django ASGI, FastAPI, Flask, REST/OpenAPI, WebSockets, WebRTC, SSE, Celery
+
+\item \textbf{Databases:} MongoDB, PostgreSQL, Redis, Vector DBs (Pinecone, Weaviate)
+
+\item \textbf{Cloud:} Azure (OpenAI, ACS, Blob, Document Intelligence, Event Grid), AWS (S3, EC2)
+
+\item \textbf{DevOps:} Docker, CI/CD, nginx
+
+\item \textbf{AI Tools:} Cursor, Claude Code, GitHub Copilot, Codex
+
+\item \textbf{Async/Remote:} Slack, Linear, Notion, Loom, Zoom, GitHub PR reviews, daily written standups
+
+\resumeItemListEnd
+\vspace{-2mm}
+
+%-----------EDUCATION-----------
+\section{\textbf{Education}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      { Indian Institute of Technology Madras (IIT-Madras) }{}
+      { Bachelor of Science in Data Science and Applications}{2022 -- May 2026}
+      \resumeItemListStart
+        \item Relevant coursework: ML Foundations, DBMS, Modern Web-app Development, Statistics, Mathematics
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-2mm}
+
+\end{document}

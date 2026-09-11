@@ -1,0 +1,354 @@
+%-------------------------
+% Resume in Latex
+% Author
+% License : MIT
+%------------------------
+
+%---- Required Packages and Functions ----
+
+\documentclass[a4paper,10pt]{article}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.2cm, top=0.5cm, right=1.0cm, bottom=0.5cm}
+% Adjust margins
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+\usepackage[most]{tcolorbox}
+\tcbset{
+	frame code={},
+	center title,
+	left=0pt,
+	right=0pt,
+	top=0pt,
+	bottom=0pt,
+	colback=gray!20,
+	colframe=white,
+	width=\dimexpr\textwidth\relax,
+	enlarge left by=-2mm,
+	boxsep=4pt,
+	arc=0pt,outer arc=0pt,
+}
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-8pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.2mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2.8mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.2mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-3mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.2mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-3mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+% \renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm,itemsep=0.5mm,parsep=0pt,topsep=1pt]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm,parsep=0pt,topsep=0pt]\small}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{0.5mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-1mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{1mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+%---- End of Packages and Functions ------
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%
+%%%%%% DEFINE ELEMENTS HERE %%%%%%%
+\newcommand{\name}{Deepali Namdev} % Your Name
+\newcommand{\course}{MCA} % Your Program
+\newcommand{\roll}{} % Your Roll No.
+\newcommand{\phone}{} % Your Phone Number
+\newcommand{\emaila}{} %Email 1
+\newcommand{\emailb}{} %Email 2
+
+
+
+
+\begin{document}
+\fontfamily{cmr}\selectfont
+%----------HEADING-----------------
+
+
+% \parbox{1.8cm}{%
+% \includegraphics[width=1.6cm,height=2.1cm,clip]{jnu.png}
+% }
+% \parbox{\dimexpr\linewidth-2.8cm\relax}{
+% \begin{tabularx}{\linewidth}{L r} \\
+%   \textbf{\Large \name} & {\raisebox{0.0\height}{\footnotesize \faPhone}\ +91-7351389269\phone}\\
+%   \href{mailto:\emaila}{\raisebox{0.0\height}{\footnotesize \faEnvelope}\ {deepali94namdev@gmail.com \emaila}} \\
+% \href{mailto:\emailb}{\raisebox{0.0\height}{\footnotesize \faEnvelope}\ {swhckwkcwsnckwsc\emailb}}\\
+%   % {Master of Computer Applications} &  
+% \end{tabularx}
+% }
+
+
+\begin{center}
+\vspace{-2mm}
+\textbf{\Huge Deepali Namdev} \\[1mm]
+\small \faPhone\ +91-7351389269 \quad
+\faEnvelope\ \href{mailto:deepali94namdev@gmail.com}{deepali94namdev@gmail.com} \quad
+\faWhatsapp\ Whatsapp: 9971356728
+\end{center}
+\vspace{-3mm}
+
+%-----------EXPERIENCE-----------------
+\section{\textbf{Experience}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      { Vajiram \& Ravi}{New Delhi}
+      {Content Creator at Sure Shot Mains Test Series Team}{July 2025 -- Dec 2025}
+      \vspace{-1.5mm}
+      \resumeItemListStart
+        \item {Contributed to the Sure Shot Mains Test Series by designing high quality questions and model answers for General Studies, including the GS Paper IV (Ethics), ensuring alignment with the evolving UPSC pattern and answer-writing standards.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      { Vision IAS}{New Delhi}
+      {Answer Sheet Evaluator}{June 2024 -- July 2025}
+      \vspace{-1.5mm}
+      \resumeItemListStart
+        \item {Evaluated answer booklets for the Vision Mains Test Series, including the Abhyaas Test Series, and supported aspirants with detailed review comments aimed at improving response effectiveness and answer-writing techniques.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      { Vajiram \& Ravi}{New Delhi}
+      {Answer Sheet Evaluator}{July 2023 -- Sept 2023}
+      \vspace{-1.5mm}
+      \resumeItemListStart
+        \item {Evaluated answer sheets of 250+ UPSC CSE aspirants and provided tailored feedback, focusing on clarity, structure, and analytical depth to help them improve their answers and responses}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      { ForumIAS}{New Delhi}
+      {Question Curator}{Feb 2023 -- Mar 2023}
+      \vspace{-1.5mm}
+      \resumeItemListStart
+        \item {Designed relevant questions for UPSC CSE mock tests, covering Indian Polity, Modern Indian History, Geography, Science and Technology, including relevant Current Affairs}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-7.5mm}
+
+%-----------EXAMINATION EXPERIENCE-----------------
+\section{\textbf{Examination Experience}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      { UPSC CSE}{}
+      {}{}
+      \vspace{-4.5mm}
+      \resumeItemListStart
+    \item {4 Attempts: 2021, 2022, 2023, 2024}
+    \item {3 Mains: UPSC CSE (2022), UPPCS (2024), BPSC (2024)}
+    \item {1 Interview: BPSC (2024)}
+    \item {Optional: Mathematics (2021-23), Anthropology (2024)}
+    \resumeItemListEnd
+    
+    \vspace{-1.5mm}
+    
+    \resumeSubheading
+      { Other Exams}{}
+      {}{}
+      \vspace{-4.5mm}
+      \resumeItemListStart
+    \item {CSIR Mains 2023, SSC CGL Mains 2023, BARC Mains 2021, AFCAT SSB 2019}
+    \resumeItemListEnd
+      
+  \resumeSubHeadingListEnd
+\vspace{-7.5mm}
+
+%-----------EDUCATION-----------
+\section{\textbf{Education}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      { Jawaharlal Nehru University, New Delhi}{Percentage: 75\%}
+      {Master of Computer Applications (MCA)}{2021}
+    \resumeSubheading
+      { Shyama Prasad Mukherji College, Delhi University}{CGPA: 7.12/10}
+      {B.Sc. Hons (Computer Science)}{2018}
+    \resumeSubheading
+      { Kendriya Vidyalaya, Muradnagar}{Percentage: 83.83\%}
+      {Class XII (CBSE)}{2014}
+    \resumeSubheading
+      { Bhel Shiksha Niketan, Jhansi}{CGPA: 10/10}
+      {Class X (CBSE)}{2012}
+  \resumeSubHeadingListEnd
+\vspace{-6mm}
+
+%-----------PROJECTS-----------------
+\section{\textbf{Personal Projects}}
+\resumeSubHeadingListStart
+
+    \resumeProject
+      { Precious Moments (Website)} %Project Name
+      {An image-sharing platform where users can upload pictures, record memories, and interact through likes and shares} %Project Name, Location Name
+      {2021} %Event Dates
+      {} %Empty fourth parameter
+
+    %   \resumeItemListStart
+    %     \item {Tools \& technologies used: React JS, SQL, Python, Django}
+    %     \item {Built a complete social media platform for sharing memories with full user interaction features}
+    % \resumeItemListEnd
+    \vspace{-3mm}
+    
+    \resumeProject
+      { Facial Recognition System} %Project Name
+      {Built a secure facial recognition application for user authentication and identity verification} %Project Name, Location Name
+      {2020} %Event Dates
+      {} %Empty fourth parameter
+
+    %   \resumeItemListStart
+    %     \item {Tools \& technologies used: Python, OpenCV, various image processing techniques}
+    %     \item {Developed a robust system for secure user authentication using advanced computer vision algorithms}
+    % \resumeItemListEnd
+    \vspace{-3mm}
+    
+    \resumeProject
+      { Fake News Classifier} %Project Name
+      {Designed a machine learning-based tool for users to identify fake news articles} %Project Name, Location Name
+      {2020} %Event Dates
+      {} %Empty fourth parameter
+
+    %   \resumeItemListStart
+    %     \item {Tools \& technologies used: LSTM, TensorFlow, Keras, NLP techniques}
+    %     \item {Enhanced information credibility by building an effective classification system using deep learning}
+    % \resumeItemListEnd
+    \vspace{-3mm}
+    
+      
+  \resumeSubHeadingListEnd
+\vspace{-4mm}
+
+%-----------Technical skills-----------------
+\section{\textbf{Technical Skills and Interests}}
+ \begin{itemize}[leftmargin=0.05in, label={},itemsep=0pt,parsep=0pt,topsep=0pt]
+    \small{\item{
+     \textbf{Languages}{: C/C++, Python, SQL, Java} \\
+     % \textbf{Developer Tools}{: MS Office} \\
+     % \textbf{Frameworks}{: Django, TensorFlow, Keras} \\
+     % \textbf{Cloud/Databases}{: SQL} \\
+     \textbf{Soft Skills}{: Content Writing, News Analysis, Mindfulness Meditation} \\
+     % \textbf{Coursework}{: Advanced Java Course (Tech Vision, 2017), Personality Development Workshop (Cetpa Infotech, 2016)} \\
+     \textbf{Areas of Interest}{: Anthropology, Pottery Painting, Gardening, Cycling, Violin, Reading, Social Sector Development} \\
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+%-----------Positions of Responsibility-----------------
+\section{\textbf{Positions of Responsibility}}
+\vspace{-0.6mm}
+\resumeSubHeadingListStart
+\resumePOR{ House Head, } % Position
+    {Ramanujan House (200+ students), Bhel Shiksha Niketan, Jhansi} %Club,Event
+    {2011} %Tenure Period
+\resumePOR{ Event Coordinator, } % Position
+    {Sangtaraash, Shyama Prasad Mukherjee College - Organised Battle of Loops event} %Club,Event
+    {2017} %Tenure Period
+\resumeSubHeadingListEnd
+\vspace{-5.5 mm}
+
+%-----------Achievements-----------------
+\section{\textbf{Achievements}}
+\vspace{-0.6 mm}
+\resumeSubHeadingListStart
+\resumePOR{ Won 1st prize in the District Science Exhibition } % Award
+    {Science Club, Jhansi} % Event
+    {2013} %Event Year
+    
+% \resumePOR{Secured 1st position in Class X } % Award
+%     {Bhel Shiksha Niketan, Jhansi} % Event
+%     {2012} %Event Year
+
+% \resumePOR{Received district-level recognition for scoring 10 CGPA in Class X } % Award
+%     {CBSE Board} % Event
+%     {2012} %Event Year
+
+\resumePOR{ Secured 2nd prize at Cayenne Star Debate } % Award
+    {Shyama Prasad Mukherji College} % Event
+    {2016} %Event Year
+
+\resumePOR{ Lead Character in Play - Chulbuli } % Award
+    {Nukkad Natak at Parichay, JNU} % Event
+    {2018} %Event Year
+
+% \resumePOR{Completed 5-day Happiness Program } % Award
+%     {Art of Living Foundation} % Event
+%     {2024} %Event Year
+\resumeSubHeadingListEnd
+
+\vspace{-4 mm}
+\setlength{\footskip}{4.08003pt}
+
+
+%-------------------------------------------
+\end{document}

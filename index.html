@@ -9,7 +9,7 @@
 
   :root{
     --cream:#FBF8F2;
-    --ink:#1E2438;
+    --ink:#0a0f1f;
     --ink-soft:#6A6E7E;
     --line:#EAE5D8;
     --blue:#3E63C2;
@@ -245,13 +245,10 @@
     <div>
       <div class="totals">
         <div>
-          <div class="big">₹19,03,500</div>
-          <div class="lbl">Total earnings, till Aug 2026</div>
+          <div class="big" id="total-earnings"></div>
+          <div class="lbl" id="total-label"></div>
         </div>
-        <div class="split">
-          Tunable Labs: <b>₹1,75,000</b><br>
-          ezAIx: <b>₹17,28,500</b>
-        </div>
+        <div class="split" id="total-split"></div>
       </div>
       <div class="brand-row">
         <span>Learn &nbsp;Build &nbsp;Grow &nbsp;Repeat &nbsp;|&nbsp; Satyam Namdev</span>
@@ -457,29 +454,80 @@ legendData.forEach(l=>{
   legendEl.appendChild(chip);
 });
 
+/* ---- earnings follow the calendar: a month counts once it has ended ---- */
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function ym(y, m){ return y * 12 + (m - 1); }
+function fmtMonth(pair){ return MONTHS[pair[1] - 1] + ' ' + pair[0]; }
+function inr(n){
+  const s = Math.round(n).toString();
+  if(s.length <= 3) return '₹' + s;
+  return '₹' + s.slice(0, -3).replace(/\B(?=(\d{2})+(?!\d))/g, ',') + ',' + s.slice(-3);
+}
+function previousMonth(date){
+  const d = new Date(date.getFullYear(), date.getMonth() - 1, 1);
+  return [d.getFullYear(), d.getMonth() + 1];
+}
+function countMonths(phase, through){
+  const start = ym(phase.start[0], phase.start[1]);
+  const thru = ym(through[0], through[1]);
+  const end = phase.end ? ym(phase.end[0], phase.end[1]) : thru;
+  const last = Math.min(end, thru);
+  return last < start ? 0 : last - start + 1;
+}
+function monthWord(n){ return n === 1 ? '1 month' : n + ' months'; }
+
+const through = previousMonth(new Date());
+
 /* ---- cards ---- */
 const cardData = [
-  {co:'Tunable Labs', range:'Dec 2024 – Apr 2025', dur:'5 months', amt:'₹35,000', total:'₹1,75,000', color:'#3E63C2'},
-  {co:'ezAIx', range:'Jun 2025', dur:'1 month', amt:'₹48,500', total:'₹48,500', color:'#8163D4'},
-  {co:'ezAIx', range:'Jul 2025', dur:'1 month', amt:'₹60,000', total:'₹60,000', color:'#8163D4'},
-  {co:'ezAIx', range:'Aug – Dec 2025', dur:'5 months', amt:'₹1,00,000', total:'₹5,00,000', color:'#D69436'},
-  {co:'ezAIx', range:'Jan – Aug 2026', dur:'8 months', amt:'₹1,40,000', total:'₹11,20,000', color:'#279B7A'},
-  {co:'ezAIx', range:'Sep 2026 onward', dur:'ongoing', amt:'₹2,10,000', total:'Current phase', color:'#D1544F'},
+  {co:'Tunable Labs', range:'Dec 2024 – Apr 2025', dur:'5 months', amt:'₹35,000', monthly:35000, start:[2024,12], end:[2025,4], color:'#3E63C2'},
+  {co:'ezAIx', range:'Jun 2025', dur:'1 month', amt:'₹48,500', monthly:48500, start:[2025,6], end:[2025,6], color:'#8163D4'},
+  {co:'ezAIx', range:'Jul 2025', dur:'1 month', amt:'₹60,000', monthly:60000, start:[2025,7], end:[2025,7], color:'#8163D4'},
+  {co:'ezAIx', range:'Aug – Dec 2025', dur:'5 months', amt:'₹1,00,000', monthly:100000, start:[2025,8], end:[2025,12], color:'#D69436'},
+  {co:'ezAIx', range:'Jan – Aug 2026', dur:'8 months', amt:'₹1,40,000', monthly:140000, start:[2026,1], end:[2026,8], color:'#279B7A'},
+  {co:'ezAIx', range:'Sep 2026 onward', dur:'ongoing', amt:'₹2,10,000', monthly:210000, start:[2026,9], end:null, color:'#D1544F'},
 ];
+
+function cardView(c){
+  const n = countMonths(c, through);
+  if(c.end === null){
+    if(n === 0) return {range:c.range, dur:'ongoing', total:'Current phase'};
+    const range = n === 1 ? fmtMonth(c.start) : fmtMonth(c.start) + ' – ' + fmtMonth(through);
+    return {range, dur:monthWord(n), total:inr(n * c.monthly)};
+  }
+  const full = countMonths(c, c.end);
+  if(n === 0) return {range:c.range, dur:'not started', total:inr(0)};
+  if(n < full) return {range:c.range, dur:n + ' of ' + full + ' months', total:inr(n * c.monthly)};
+  return {range:c.range, dur:c.dur, total:inr(n * c.monthly)};
+}
+
 const cardsEl = document.getElementById('cards');
+const byCo = {};
+let grand = 0;
 cardData.forEach(c=>{
+  const n = countMonths(c, through);
+  const earned = n * c.monthly;
+  grand += earned;
+  byCo[c.co] = (byCo[c.co] || 0) + earned;
+  const view = cardView(c);
   const div = document.createElement('div');
   div.className = 'card';
   div.style.setProperty('--card-color', c.color);
   div.innerHTML = `
     <div class="tag">${c.co}</div>
-    <div class="range">${c.range}</div>
-    <div class="dur">${c.dur}</div>
+    <div class="range">${view.range}</div>
+    <div class="dur">${view.dur}</div>
     <div class="amt">${c.amt}<small> /month</small></div>
-    <div class="total"><b>${c.total}</b></div>
+    <div class="total"><b>${view.total}</b></div>
   `;
   cardsEl.appendChild(div);
 });
+
+document.getElementById('total-earnings').textContent = inr(grand);
+document.getElementById('total-label').textContent = 'Total earnings, till ' + fmtMonth(through);
+document.getElementById('total-split').innerHTML = Object.keys(byCo)
+  .map(co => co + ': <b>' + inr(byCo[co]) + '</b>')
+  .join('<br>');
 </script>
 </body>
 </html>
